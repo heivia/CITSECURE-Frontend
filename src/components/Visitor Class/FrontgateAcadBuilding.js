@@ -54,7 +54,7 @@ class FrontgateAcadBuilding extends Component {
                     <Row className="justify-content-center">
                         <Col sm={12} className="d-flex justify-content-center">
                             <img
-                                src="https://raw.githubusercontent.com/heivia/CITSECURE-Frontend/main/path/to/AcadMap (Front).png"
+                                src="/images/AcadMap (Front).png"
                                 alt="Acad building Map"
                                 style={{
                                     width: '60%',
