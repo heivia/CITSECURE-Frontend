@@ -48,7 +48,7 @@ class VisitorExit extends Component {
 
   handleFetchVisitorImage = async (cardNo) => {
     const currentDate = new Date().toISOString().split('T')[0];
-    const imageUrl = `http://localhost:8080/image/getIDImg/${cardNo}/${currentDate}`;
+    const imageUrl = `https://cit-secure-backend.onrender.com/image/getIDImg/${cardNo}/${currentDate}`;
     try {
       const response = await axios.get(imageUrl, { responseType: 'blob' });
       const imageObjectURL = URL.createObjectURL(response.data);
@@ -72,7 +72,7 @@ class VisitorExit extends Component {
     const { cardNo } = this.state;
 
     try {
-      const response = await axios.get(`http://localhost:8080/visitor/getVisitorByCardNo/${cardNo}`);
+      const response = await axios.get(`https://cit-secure-backend.onrender.com/visitor/getVisitorByCardNo/${cardNo}`);
 
       if (response.data) {
         console.log('Visitor details fetched:', response.data);
@@ -123,7 +123,7 @@ class VisitorExit extends Component {
 
     try {
       const response = await axios.put(
-        `http://localhost:8080/visitor/updateVisitorTimeOut/${cardNo}?timeOut=${timeOut}`,
+        `https://cit-secure-backend.onrender.com/visitor/updateVisitorTimeOut/${cardNo}?timeOut=${timeOut}`,
         {},
         { headers: { 'Content-Type': 'application/json' } }
       );
