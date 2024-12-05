@@ -138,7 +138,7 @@ class AdminStatistics extends Component {
 
   fetchData = () => {
     axios
-      .get('http://localhost:8080/visitor/getAllVisitors') // Replace with your backend endpoint
+      .get('https://cit-secure-backend.onrender.com/visitor/getAllVisitors') // Replace with your backend endpoint
       .then((response) => {
         const allData = response.data;
         this.setState({ data: allData, filteredData: allData }, this.filterData); // Update state with fetched data
