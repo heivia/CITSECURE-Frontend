@@ -54,7 +54,7 @@ class AdminPage extends Component {
   };
   fetchUsers = () => {
     axios
-      .get('http://localhost:8080/visitor/getAllVisitors') // API call to fetch visitors
+      .get('https://cit-secure-backend.onrender.com/visitor/getAllVisitors') // API call to fetch visitors
       .then((response) => {
         console.log('API Response:', response.data); // Log the response data to the console
         this.setState({ users: response.data }); // Update users state with the fetched data
@@ -245,7 +245,7 @@ class AdminPage extends Component {
   handleUpdateModalSave = async () => {
     const { selectedUserId, updatedUserData } = this.state;
     try {
-      const response = await axios.put(`http://localhost:8080/visitor/updateVisitor/${selectedUserId}`, {
+      const response = await axios.put(`https://cit-secure-backend.onrender.com/visitor/updateVisitor/${selectedUserId}`, {
         firstName: updatedUserData.firstName,
         lastName: updatedUserData.lastName,
       });
